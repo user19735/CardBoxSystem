@@ -24,6 +24,21 @@ def Exit():
     print("...")
     time.sleep(1)
     exit()
+
+
+Following function does not work yet but will be get to working soon
+def deleteWord():
+    WordToDelete = input("Enter the Word you want to delete")
+    with open("LibaryAndStorage/Words", "r") as openFile1:
+        lines = " ".join(openFile1.readlines())
+        lines = binaryToText(lines)
+    if WordToDelete in lines:
+        with open("LibaryAndStorage/Words", "w") as openFile2:
+            for i in range(len(lines)-2):
+                if lines[i].strip("\n") == WordToDelete:
+                    i += 2
+                    break
+                openFile2.write(textToBinary(lines[i]))
 """
 
 def createNewWord():
