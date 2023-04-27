@@ -14,6 +14,7 @@ mainloop()
         echo "[4] Quit"
         echo "Which Option do you choose? "
         read option
+        clear
         if [[ $option -eq 1 ]]; then
             python main.py --train
         elif [[ $option -eq 2 ]]; then
@@ -27,7 +28,7 @@ mainloop()
             echo "No valid argument."
             exit
         fi
-
+        clear
     done
 }
 
