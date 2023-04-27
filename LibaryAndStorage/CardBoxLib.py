@@ -3,8 +3,8 @@ import pyfiglet
 
 class Libary:
 
+    """ saved this for future Windows Version
     def menu():
-        print("\033[?25l")
         print("\033[1m[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
         option = str(input("Which Option do you choose: "))
         if option == "1" or option == "2" or option == "3" or option == "4":
@@ -16,8 +16,18 @@ class Libary:
                 Libary.createNewWord()
             elif option == "4":
                 Libary.Exit()
+    def Exit():
+        print("\033[?25h")
+        print("\033[2J")
+        print("\033[H")
+        print("Exiting now.")
+        time.sleep(1)
+        print("...")
+        time.sleep(1)
+        exit()         
+    """
 
-    def createNewWord():
+    def createNewWord(self):
         print("\33[2J")
         print("\33[H")
         word = str(input("Enter a Word: "))
@@ -26,7 +36,7 @@ class Libary:
         file.write(f"{Libary.textToBinary(word)}\n{Libary.textToBinary(definition)}\n")
         return input("Enter again to go back to menu")
 
-    def train():
+    def train(self):
         instance = Libary()
         terms = instance.splitLines(Libary.openFileAndSplitLines("LibaryAndStorage/Words"))[0]
         definitions = instance.splitLines(Libary.openFileAndSplitLines("LibaryAndStorage/Words"))[1]
@@ -42,15 +52,7 @@ class Libary:
                 print(definitions[i-1])
                 return input("Enter again to go back to menu")
 
-    def Exit():
-        print("\033[?25h")
-        print("\033[2J")
-        print("\033[H")
-        print("Exiting now.")
-        time.sleep(1)
-        print("...")
-        time.sleep(1)
-        exit()
+    
 
     def openFileAndSplitLines(path):
         file = open(path, "r")
@@ -74,8 +76,3 @@ class Libary:
     
     def binaryToText(binary):
         return "".join(chr(int(c, 2)) for c in binary.split(" "))
-
-    def textToASCII(self,text):
-        font = "larry3d"
-        return pyfiglet.figlet_format(text, font = font)
-        

@@ -1,9 +1,41 @@
 #!/bin/bash
+
+mainloop() 
+{
+    for (( ; ; ))
+    do
+        echo -e "\033[1m"
+        echo  -e "\033[38;5;28m"
+        echo -e "\033[?25l"
+        figlet -f Chunky "menu"
+        echo "[1] Train"
+        echo "[2] Create a new Word"
+        echo "[3] Delete a Word"
+        echo "[4] Quit"
+        echo -e "\033[?25h"
+        echo "Which Option do you choose? "
+        read option
+        clear
+        if [[ $option -eq 1 ]]; then
+            python main.py --train
+        elif [[ $option -eq 2 ]]; then
+            python main.py --deleteWord
+        elif [[ $option -eq 3 ]]; then
+            python main.py --createWord
+        elif [[ $option -eq 4 ]]; then
+            exit
+        else
+            echo "No valid argument."
+            exit
+        fi
+        clear
+    done
+}
+
 clear
-figlet -f larry3d "CardBox" | lolcat
+figlet -f larry3d "CardBox" | lolcat 
 figlet -f larry3d "System" | lolcat
 echo -e "\033[38;5;27m"
+echo -e "\033[1m"
 echo "Made by Tim"
-echo  -e "\033[38;5;28m"
-figlet -f Chunky "menu"
-python main.py
+mainloop
