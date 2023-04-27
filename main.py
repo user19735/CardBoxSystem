@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/tim/Desktop/.Programmieren/.Projects/CardBoxSystem/LibaryAndStorage")
+sys.path.append("LibaryAndStorage")
 from CardBoxLib import Libary
 
 

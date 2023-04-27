@@ -4,10 +4,6 @@ figlet -f larry3d "CardBox" | lolcat
 figlet -f larry3d "System" | lolcat
 echo -e "\033[38;5;27m"
 echo "Made by Tim"
-for (( ; ; ))
-do
-    echo  -e "\033[38;5;28m"
-    figlet -f Chunky "menu"
-    python main.py
-    clear
-done
+echo  -e "\033[38;5;28m"
+figlet -f Chunky "menu"
+python main.py

@@ -22,14 +22,14 @@ class Libary:
         print("\33[H")
         word = str(input("Enter a Word: "))
         definition = str(input("Enter a definition: "))
-        file = open("/home/tim/Desktop/.Programmieren/Python/Karteikarten/LibaryAndStorage/Words", "a")
+        file = open("LibaryAndStorage/Words", "a")
         file.write(f"{Libary.textToBinary(word)}\n{Libary.textToBinary(definition)}\n")
         return input("Enter again to go back to menu")
 
     def train():
         instance = Libary()
-        terms = instance.splitLines(Libary.openFileAndSplitLines("/home/tim/Desktop/.Programmieren/Python/Karteikarten/LibaryAndStorage/Words"))[0]
-        definitions = instance.splitLines(Libary.openFileAndSplitLines("/home/tim/Desktop/.Programmieren/Python/Karteikarten/LibaryAndStorage/Words"))[1]
+        terms = instance.splitLines(Libary.openFileAndSplitLines("LibaryAndStorage/Words"))[0]
+        definitions = instance.splitLines(Libary.openFileAndSplitLines("LibaryAndStorage/Words"))[1]
         number = input(f"Which word do you want? You can choose from {len(terms)} Word(s): ")
         try:
             number = int(number)
