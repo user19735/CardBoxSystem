@@ -4,8 +4,8 @@ import pyfiglet
 class Libary:
 
     def menu():
-        print("\33[?25l")
-        print("\33[1m[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
+        print("\033[?25l")
+        print("\033[1m[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
         option = str(input("Which Option do you choose: "))
         if option == "1" or option == "2" or option == "3" or option == "4":
             if option == "1":
@@ -43,9 +43,9 @@ class Libary:
                 return input("Enter again to go back to menu")
 
     def Exit():
-        print("\33[?25h")
-        print("\33[2J")
-        print("\33[H")
+        print("\033[?25h")
+        print("\033[2J")
+        print("\033[H")
         print("Exiting now.")
         time.sleep(1)
         print("...")

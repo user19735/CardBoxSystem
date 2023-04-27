@@ -3,7 +3,7 @@ clear
 figlet -f larry3d "CardBox" | lolcat
 figlet -f larry3d "System" | lolcat
 echo -e "\033[38;5;27m"
-echo "Made by user19735"
+echo "Made by Tim"
 for (( ; ; ))
 do
     echo  -e "\033[38;5;28m"
