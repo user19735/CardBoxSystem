@@ -1,13 +1,11 @@
 import time
+import pyfiglet
+
 class Libary:
 
     def menu():
-        CLEAR = "\33[2J"
-        RETURN = "\33[H"
-        print(CLEAR)
         print("\33[?25l")
-        print(RETURN)
-        print("\33[1mMenu\n[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
+        print("\33[1m[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
         option = str(input("Which Option do you choose: "))
         if option == "1" or option == "2" or option == "3" or option == "4":
             if option == "1":
@@ -76,3 +74,8 @@ class Libary:
     
     def binaryToText(binary):
         return "".join(chr(int(c, 2)) for c in binary.split(" "))
+
+    def textToASCII(self,text):
+        font = "larry3d"
+        return pyfiglet.figlet_format(text, font = font)
+        
