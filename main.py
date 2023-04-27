@@ -9,8 +9,8 @@ if __name__ == "__main__":
     elif(sys.argv[1] == "-dw" or sys.argv[1] == "--deleteWord"):
         print("Coming Soon as possible.")
         nothing = input("Press Enter to go back to menu")
-    elif(sys.argv[1] == "-cw" or sys.argv[1] == "--createWord"):
-        createNewWord()
+    elif(sys.argv[1] == "-aw" or sys.argv[1] == "--addWord"):
+        addNewWord()
     elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
         #placeholder for future --help or -h Feature
         pass

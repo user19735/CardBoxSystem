@@ -41,7 +41,7 @@ def deleteWord():
                 openFile2.write(textToBinary(lines[i]))
 """
 
-def createNewWord():
+def addNewWord():
     word = str(input("Enter a Word: "))
     definition = str(input("Enter a definition: "))
     file = open("LibaryAndStorage/Words", "a")

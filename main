@@ -18,7 +18,7 @@ mainloop()
         if [[ $option -eq 1 ]]; then
             python main.py --train
         elif [[ $option -eq 2 ]]; then
-            python main.py --createWord
+            python main.py --addWord
         elif [[ $option -eq 3 ]]; then
             python main.py --deleteWord
         elif [[ $option -eq 4 ]]; then
