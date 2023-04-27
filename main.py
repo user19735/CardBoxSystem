@@ -1,17 +1,16 @@
 import sys
 sys.path.append("LibaryAndStorage")
-from CardBoxLib import Libary
-
+from CardBoxLib import *
 
 if __name__ == "__main__":
     
     if(sys.argv[1] == "-t" or sys.argv[1] == "--train"):
-        Libary().train()
+        train()
     elif(sys.argv[1] == "-dw" or sys.argv[1] == "--deleteWord"):
-        print("Function is not implemented yet.")
-        nothing = input("Press Enter to go back to the menu.")
+        print("Function does not work yet.")
+        nothing = input("Press Enter to go back to menu")
     elif(sys.argv[1] == "-cw" or sys.argv[1] == "--createWord"):
-        Libary().createNewWord()
+        createNewWord()
     elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
-        #placeholder for future Feature
+        #placeholder for future --help or -h Feature
         pass
