@@ -82,3 +82,6 @@ def splitLines(lines):
         counter+= 2
         wordCounter += 1
     return terms, definitions
+
+if __name__ == "__main__":
+    pass
