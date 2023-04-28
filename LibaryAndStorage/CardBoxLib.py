@@ -1,6 +1,6 @@
 import time
 import pyfiglet
-
+import binascii
 
 """ saved this for future Windows Version
 def menu():
@@ -26,26 +26,35 @@ def Exit():
     exit()
 
 
-Following function does not work yet but will be get to working soon
+#Following function does not work yet but will be get to work soon
 def deleteWord():
-    WordToDelete = input("Enter the Word you want to delete")
+    WordToDelete = input("Enter the Word you want to delete: ")
     with open("LibaryAndStorage/Words", "r") as openFile1:
-        lines = " ".join(openFile1.readlines())
-        lines = binaryToText(lines)
-    if WordToDelete in lines:
-        with open("LibaryAndStorage/Words", "w") as openFile2:
-            for i in range(len(lines)-2):
-                if lines[i].strip("\n") == WordToDelete:
-                    i += 2
-                    break
-                openFile2.write(textToBinary(lines[i]))
+        lines = openFile1.readlines()
+    with open(r"LibaryAndStorage/Words", 'w') as fp:
+    # iterate each line
+        i = 0
+        while(i < len(lines)):
+            fp2 = open("LibaryAndStorage/Words", "r")
+            lines = fp2.readlines()
+            if line == WordToDelete:
+                i += 2
+                break
+            fp.write(lines[i])
+            i += 1
 """
+
+def binaryToTextList(encodedList):
+    result = []
+    for i in binaryList:
+        result.append(i.decode)
+
 
 def addNewWord():
     word = str(input("Enter a Word: "))
     definition = str(input("Enter a definition: "))
     file = open("LibaryAndStorage/Words", "a")
-    file.write(f"{textToBinary(word)}\n{textToBinary(definition)}\n")
+    file.write(f"{word}\n{definition}\n")
     return input("Enter again to go back to menu")
 
 def train():
@@ -76,14 +85,8 @@ def splitLines(lines):
     definitions = []
     upperBorderRange = int(len(lines)/2)
     for i in range(0,upperBorderRange):
-        terms.append(binaryToText(lines[counter]))
-        definitions.append(binaryToText(lines[counter+1]))
+        terms.append(lines[counter])
+        definitions.append(lines[counter+1])
         counter+= 2
         wordCounter += 1
     return terms, definitions
-
-def textToBinary(text):
-    return " ".join(format(ord(c), "b") for c in text)
-    
-def binaryToText(binary):
-    return "".join(chr(int(c, 2)) for c in binary.split(" "))
