@@ -1,31 +1,44 @@
 import time
 import pyfiglet
-import binascii
+import os
 
-""" saved this for future Windows Version
+BLUE = "\033[38;5;27m"
+GREEN = "\033[38;5;28m"
+BOLD = "\033[1m"
+HIDE_CURSOR = "\033[?25l"
+SHOW_CURSOR = "\033[?25h"
+
+def initialize():
+    os.system("clear")
+    print(HIDE_CURSOR)
+    print(GREEN)
+    print(textToASCIIArt("Card Box", "larry3d"))
+    print(textToASCIIArt("System", "larry3d"))
+    print(BLUE + "Made by Tim"+ GREEN + " " + BOLD)
+
 def menu():
-    print("\033[1m[1] Train\n[2] Delete a Word\n[3] Create a new Word\n[4] Quit")
+    print(textToASCIIArt("Menu", "chunky"))
+    print("[1] Train\n[2] Add a new Word\n[3] Delete a Word\n[4] Quit")
     option = str(input("Which Option do you choose: "))
+    os.system("clear")
     if option == "1" or option == "2" or option == "3" or option == "4":
         if option == "1":
-            Libary.train()    
+            train()    
         elif option == "2":
-            pass
+            addNewWord()
+            os.system("clear")
         elif option == "3":
-            Libary.createNewWord()
+            deleteWord()
         elif option == "4":
-            Libary.Exit()
-def Exit():
-    print("\033[?25h")
-    print("\033[2J")
-    print("\033[H")
-    print("Exiting now.")
-    time.sleep(1)
-    print("...")
-    time.sleep(1)
-    exit()
+            Exit()
 
-"""
+def textToASCIIArt(text, font):
+        return pyfiglet.figlet_format(text, font = font)
+
+def Exit():
+    print(SHOW_CURSOR)
+    os.system("clear")
+    exit()
 
 def addNewWord():
     word = str(input("Enter a Word: "))
@@ -33,6 +46,7 @@ def addNewWord():
     file = open("LibaryAndStorage/Words", "a")
     file.write(f"{word}\n{definition}\n")
     return input("Enter again to go back to menu")
+    os.system("clear")
 
 def train():
     terms = splitLines(openFileAndSplitLines("LibaryAndStorage/Words"))[0]
@@ -41,13 +55,15 @@ def train():
     try:
         number = int(number)
     except:
-        exit()
+        os.system("clear")
+        menu()
     for i in range(len(terms)+1):
         if i == number:
             print(terms[i-1])
             question = input("Press Enter if you want to hear the definition")
             print(definitions[i-1])
             return input("Enter again to go back to menu")
+            os.system("clear")
 
 def deleteWord():
     WordToDelete = input("Enter the Word you want to delete: ")
