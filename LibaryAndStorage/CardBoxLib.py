@@ -14,7 +14,7 @@ def initialize():
     print(GREEN)
     print(textToASCIIArt("Card Box", "larry3d"))
     print(textToASCIIArt("System", "larry3d"))
-    print(BLUE + "Made by Tim"+ GREEN + " " + BOLD)
+    print(BLUE + "Made by user19735"+ GREEN + " " + BOLD)
 
 def menu():
     print(textToASCIIArt("Menu", "chunky"))
