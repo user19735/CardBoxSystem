@@ -25,30 +25,7 @@ def Exit():
     time.sleep(1)
     exit()
 
-
-#Following function does not work yet but will be get to work soon
-def deleteWord():
-    WordToDelete = input("Enter the Word you want to delete: ")
-    with open("LibaryAndStorage/Words", "r") as openFile1:
-        lines = openFile1.readlines()
-    with open(r"LibaryAndStorage/Words", 'w') as fp:
-    # iterate each line
-        i = 0
-        while(i < len(lines)):
-            fp2 = open("LibaryAndStorage/Words", "r")
-            lines = fp2.readlines()
-            if line == WordToDelete:
-                i += 2
-                break
-            fp.write(lines[i])
-            i += 1
 """
-
-def binaryToTextList(encodedList):
-    result = []
-    for i in binaryList:
-        result.append(i.decode)
-
 
 def addNewWord():
     word = str(input("Enter a Word: "))
@@ -72,7 +49,22 @@ def train():
             print(definitions[i-1])
             return input("Enter again to go back to menu")
 
-
+def deleteWord():
+    WordToDelete = input("Enter the Word you want to delete: ")
+    openFile = open("LibaryAndStorage/Words", "r")
+    lines = openFile.read().splitlines()
+    # iterate each line
+    with open("LibaryAndStorage/Words", 'w') as fp:
+        i = 0
+        for line in lines:
+            if(line == WordToDelete):
+                break
+            i += 1
+        for number, line in enumerate(lines):
+        # delete line 5 and 8. or pass any Nth line you want to remove
+        # note list index starts from 0
+            if number not in [i, i+1]:
+                fp.write(line + "\n")
 
 def openFileAndSplitLines(path):
     file = open(path, "r")

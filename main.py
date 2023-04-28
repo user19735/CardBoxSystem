@@ -3,12 +3,11 @@ sys.path.append("LibaryAndStorage")
 from CardBoxLib import *
 
 if __name__ == "__main__":
-    
+    deleteWord()
     if(sys.argv[1] == "-t" or sys.argv[1] == "--train"):
         train()
     elif(sys.argv[1] == "-dw" or sys.argv[1] == "--deleteWord"):
-        print("Coming Soon as possible.")
-        nothing = input("Press Enter to go back to menu")
+        deleteWord()
     elif(sys.argv[1] == "-aw" or sys.argv[1] == "--addWord"):
         addNewWord()
     elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
